@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Display Lab">
-  <meta name="dcterms.date" content="2019-05-21">
-  <title>Demo Slides</title>
+  <meta name="dcterms.date" content="2019-12-20">
+  <title>Bitstomach</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -97,55 +97,188 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">Demo Slides</h1>
+  <h1 class="title">Bitstomach</h1>
   <p class="author">Display Lab</p>
-  <p class="date">2019-05-21</p>
+  <p class="date">2019-12-20</p>
 </section>
 
-<section id="first-title" class="title-slide slide level1"><h1>First Title</h1><p>Welcome to the first slide.</p>
-<p>Display Lab</p>
-<p>2019-05-21</p></section>
-<section id="second-title" class="title-slide slide level1"><h1>Second Title</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae justo eget magna fermentum iaculis.</p></section>
-<section><section id="third-title" class="title-slide slide level1"><h1>Third Title</h1><p>Tortor pretium viverra suspendisse potenti nullam ac tortor vitae. Nunc mattis enim ut tellus elementum sagittis vitae et.</p></section><section id="sub-1" class="slide level2">
-<h2>3 Sub 1</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb1-1" title="1">puts <span class="st">&quot;Hello World&quot;</span></a>
-<a class="sourceLine" id="cb1-2" title="2">(<span class="dv">1</span>..<span class="dv">10</span>).each{ |n| puts n+<span class="dv">10</span> }</a></code></pre></div>
-<p>Enim nulla aliquet porttitor lacus luctus accumsan. Nulla pellentesque dignissim enim sit amet.</p>
-</section><section id="sub-2" class="slide level2">
-<h2>3 Sub 2</h2>
-<p><del>Auctor neque vitae tempus quam pellentesque.</del></p>
-<h3 id="scelerisque-viverra-mauris-in-aliquam-sem-fringilla.">Scelerisque viverra mauris in aliquam sem fringilla.</h3>
-<p>Donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum.</p>
-</section><section id="sub-3" class="slide level2">
-<h2>3 Sub 3</h2>
-<p><em>Massa id neque aliquam vestibulum morbi blandit cursus risus at.</em> <em>Vestibulum sed arcu non odio euismod.</em> <strong>Ut tellus elementum sagittis vitae et leo duis ut.</strong></p>
+<section><section id="annotating-performers" class="title-slide slide level1"><h1>Annotating Performers</h1><p>Using performance data.</p></section><section id="conclusion-from-performance-data" class="slide level2">
+<h2>Conclusion from performance data</h2>
+<blockquote>
+<p>Alice has a positive gap compared to the goal (0.8) for rate of documenting.</p>
+</blockquote>
+<ul>
+<li><strong>Alice</strong> is the performer.</li>
+<li><strong>Rate of documenting</strong> is the measure.</li>
+<li><strong>Goal (0.8)</strong> is the comparator.</li>
+<li><strong>Postive gap</strong> is the annotation about the performer.</li>
+</ul>
+</section><section id="machine-readable" class="slide level2">
+<h2>Machine readable</h2>
+<pre><code>  TODO:
+  JSON or SVG of performer Alice in spek output</code></pre>
 </section></section>
-<section id="fourth-title" class="title-slide slide level1"><h1>Fourth Title</h1><ul>
-<li>Duis at tellus at urna condimentum mattis pellentesque.</li>
-<li>Morbi leo urna molestie at elementum eu facilisis sed.</li>
-<li>Vel elit scelerisque mauris pellentesque pulvinar pellentesque.</li>
+<section><section id="inputs" class="title-slide slide level1"><h1>Inputs</h1><ul>
+<li>Spek: Specification of data columns, measures, and performers</li>
+<li>Data: Performance data</li>
+<li>Annotations: Functions for processing data to attributes.</li>
+</ul></section><section id="spek" class="slide level2">
+<h2>Spek</h2>
+<p>JSON-LD representation of</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="dt">&quot;measures&quot;</span><span class="fu">:</span> <span class="ot">[</span></a>
+<a class="sourceLine" id="cb2-3" title="3">   <span class="er">...</span> <span class="er">info</span> <span class="er">about</span> <span class="er">measures</span></a>
+<a class="sourceLine" id="cb2-4" title="4">  <span class="ot">]</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb2-5" title="5">  <span class="dt">&quot;table_schema&quot;</span><span class="fu">:</span> <span class="ot">[</span></a>
+<a class="sourceLine" id="cb2-6" title="6">   <span class="er">...</span> <span class="er">info</span> <span class="er">about</span> <span class="er">the</span> <span class="er">data</span></a>
+<a class="sourceLine" id="cb2-7" title="7">  <span class="ot">]</span></a>
+<a class="sourceLine" id="cb2-8" title="8"><span class="fu">}</span></a></code></pre></div>
+<ul>
+<li>Names of the measures or what the goal is for a measure.</li>
+<li>Titles of the data columns and what the data column is used for.</li>
+</ul>
+</section><section id="data" class="slide level2">
+<h2>Data</h2>
+<p>Tabular data of performance for each performer</p>
+<pre class="csv"><code>id,    date,       rate
+alice, 2019-10-01, 0.90
+alice, 2019-11-01, 0.95
+bob,   2019-10-01, 0.90
+bob,   2019-11-01, 0.80</code></pre>
+</section><section id="annotations" class="slide level2">
+<h2>Annotations</h2>
+<p>Functions that operate on the data and determine if an attribute is present.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">annotate_gap &lt;-<span class="st"> </span><span class="cf">function</span>(data, spek){</a>
+<a class="sourceLine" id="cb4-2" title="2">  data <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">filter</span>(date <span class="op">==</span><span class="st"> </span><span class="kw">max</span>(date)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="st">    </span><span class="kw">group_by</span>(id) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="st">    </span><span class="kw">summarize</span>(<span class="dt">positive_gap =</span> (rate <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.85</span>))</a>
+<a class="sourceLine" id="cb4-6" title="6">}</a></code></pre></div>
+</section></section>
+<section id="processing" class="title-slide slide level1"><h1>Processing</h1><p>Produce annotations for each measure for each performer.</p>
+<ul>
+<li>Alice
+<ul>
+<li>documentation rate: is there a performance gap?</li>
+</ul></li>
+<li>Bob
+<ul>
+<li>documentation rate: is there a performance gap?</li>
+</ul></li>
 </ul></section>
-<section id="section" class="title-slide slide level1"><h1></h1><ol type="1">
-<li>Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus.</li>
-<li>Curabitur vitae nunc sed velit dignissim sodales ut eu.</li>
-<li>Urna nec tincidunt praesent semper feugiat nibh sed.</li>
+<section id="walkthrough" class="title-slide slide level1"><h1>Walkthrough</h1><ol type="1">
+<li>Read Spek</li>
+<li>Read Data</li>
+<li>Run Annotations</li>
 </ol></section>
-<section id="sixth-title" class="title-slide slide level1"><h1>Sixth Title</h1><ul>
-<li>Suspendisse potenti nullam ac tortor vitae.</li>
-<li>Congue quisque egestas diam in arcu cursus euismod.</li>
-<li>Consectetur adipiscing elit duis tristique sollicitudin.</li>
-</ul></section>
-<section><section id="seventh-title" class="title-slide slide level1"><h1>Seventh Title</h1><p>Image content</p>
-<p><img data-src="assets/top_perf.svg" /></p></section><section id="section-1" class="slide level2">
-<h2></h2>
-<figure>
-<img data-src="assets/top_perf.svg" alt="image title" width="250" /><figcaption>image title</figcaption>
-</figure>
+<section><section id="read-spek" class="title-slide slide level1"><h1>1. Read spek</h1><ul>
+<li>Find out about the measures</li>
+<li>Find out about the data format</li>
+</ul></section><section id="find-out-about-measures" class="slide level2">
+<h2>Find out about measures</h2>
+<ul>
+<li>the measure is “documentation rate”</li>
+<li>the comparator is a goal of 0.85</li>
+</ul>
+</section><section id="find-out-about-input-data-format" class="slide level2">
+<h2>Find out about input data format</h2>
+<ul>
+<li><strong>identifier column</strong> is “id”</li>
+<li><strong>performance column</strong> is “rate”</li>
+<li><strong>timepoint column</strong> is “date”</li>
+</ul>
 </section></section>
-<section id="seventh-title-1" class="title-slide slide level1"><h1>Seventh Title</h1><p>Incremental fragments</p>
-<p><span class="fragment"> stuff </span></p>
-<p><span class="fragment"> other </span></p>
-<p><span class="fragment"> stuff </span></p></section>
+<section id="read-data" class="title-slide slide level1"><h1>2. Read data</h1><p>Get the performance of each performer.</p>
+<pre><code># A tibble: 4 x 1
+  $id   $date      $rate
+  &lt;fct&gt; &lt;date&gt;     &lt;dbl&gt;
+  alice 2019-10-01  0.9
+  alice 2019-11-01  0.95
+  bob   2019-10-01  0.9
+  bob   2019-11-01  0.8</code></pre>
+<p>Nothing fancy. Just reading tabular data.</p></section>
+<section><section id="run-annotations" class="title-slide slide level1"><h1>3. Run Annotations</h1><p>For a each performer, with each measure, get results of annotations.</p></section><section id="example-annotate_gap-function" class="slide level2">
+<h2>Example <code>annotate_gap</code> function</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">annotate_gap &lt;-<span class="st"> </span><span class="cf">function</span>(data, spek){</a>
+<a class="sourceLine" id="cb6-2" title="2">  data <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">filter</span>(date <span class="op">==</span><span class="st"> </span><span class="kw">max</span>(date)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="st">    </span><span class="kw">group_by</span>(id) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb6-5" title="5"><span class="st">    </span><span class="kw">summarize</span>(<span class="dt">positive_gap =</span> (rate <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.85</span>))</a>
+<a class="sourceLine" id="cb6-6" title="6">}</a></code></pre></div>
+</section><section id="section" class="slide level2">
+<h2></h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1">dplyr<span class="op">::</span><span class="kw">filter</span>(date <span class="op">==</span><span class="st"> </span><span class="kw">max</span>(date)</a></code></pre></div>
+<p>Filter the data to only rows where the date equals the maximum (most recent) date</p>
+<pre><code>  $id   $date      $rate
+  alice 2019-11-01  0.95
+  bob   2019-11-01  0.8</code></pre>
+</section><section id="section-1" class="slide level2">
+<h2></h2>
+<pre><code>group_by(id)</code></pre>
+<p>Marks the id column values as what to use for subsequent aggregations using.</p>
+</section><section id="section-2" class="slide level2">
+<h2></h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1">    <span class="kw">summarize</span>(<span class="dt">positive_gap =</span> (rate <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.85</span>))</a></code></pre></div>
+<p>Aggregate to create a new column <code>positive_gap</code>.</p>
+<p>Fill it with the result of: <code>rate &gt; 0.85</code></p>
+<pre><code>  $id   $positive_gap
+  alice TRUE
+  bob   FALSE</code></pre>
+</section></section>
+<section><section id="aggregate-results" class="title-slide slide level1"><h1>Aggregate results</h1><p>For each measure, produce a table of performers and the annotations about that measure.</p></section><section id="multiple-annotations-assessed" class="slide level2">
+<h2>Multiple annotations assessed</h2>
+<ul>
+<li>positive performance gap</li>
+<li>negative performance gap</li>
+<li>positive performance trend</li>
+<li>negative performance trend</li>
+</ul>
+</section><section id="multiple-tables" class="slide level2">
+<h2>Multiple Tables</h2>
+<p>Each annotation function produces it’s own table.</p>
+<pre><code>  $id   $positive_gap
+  alice TRUE
+  bob   FALSE</code></pre>
+<pre><code>  $id   $negative_gap
+  alice FALSE
+  bob   TRUE</code></pre>
+</section><section id="annotations-condensed-into-a-single-table" class="slide level2">
+<h2>Annotations condensed into a single table</h2>
+<pre><code>  $id   $positive_gap $negative_gap $positive_trend ...
+  alice TRUE          FALSE         TRUE            ...
+  bob   FALSE         TRUE          FALSE           ...</code></pre>
+</section></section>
+<section><section id="update-performers" class="title-slide slide level1"><h1>Update Performers</h1><p>Add information about performers to the spek.</p></section><section id="section-3" class="slide level2">
+<h2></h2>
+<div class="sourceCode" id="cb15"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb15-1" title="1"><span class="er">&quot;Performers&quot;:</span> <span class="ot">[</span></a></code></pre></div>
+<span class="fragment"> Performer…
+<pre><code>
+  { "@id": "Alice"
+  </code></pre>
+<p></span></p>
+<span class="fragment"> …deduction about them…
+<pre><code>
+    "Has Disposition":[
+      { "@type": "Postive Performance Gap",
+</code></pre>
+<p></span></p>
+<span class="fragment"> …for a particular measure
+<pre><code>
+        "Regarding Measure": "Documentation Rate"}
+</code></pre>
+<p></span></p>
+</section><section id="section-4" class="slide level2">
+<h2></h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb16-1" title="1"><span class="er">&quot;Performers&quot;:</span> <span class="ot">[</span></a>
+<a class="sourceLine" id="cb16-2" title="2">  <span class="fu">{</span> <span class="dt">&quot;@id&quot;</span><span class="fu">:</span> <span class="st">&quot;Alice&quot;</span></a>
+<a class="sourceLine" id="cb16-3" title="3">    <span class="st">&quot;Has Disposition&quot;</span><span class="er">:</span> <span class="ot">[</span></a>
+<a class="sourceLine" id="cb16-4" title="4">      <span class="fu">{</span> <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;Postive Performance Gap&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb16-5" title="5">        <span class="dt">&quot;Regarding Measure&quot;</span><span class="fu">:</span> <span class="st">&quot;Documentation Rate&quot;</span><span class="fu">}</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb16-6" title="6">      <span class="fu">{</span> <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;Postive Performance Gap&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb16-7" title="7">        <span class="dt">&quot;Regarding Measure&quot;</span><span class="fu">:</span> <span class="st">&quot;Documentation Rate&quot;</span><span class="fu">}</span><span class="ot">]</span> <span class="fu">}</span></a>
+<a class="sourceLine" id="cb16-8" title="8">  <span class="fu">{</span> <span class="dt">&quot;@id&quot;</span><span class="fu">:</span> <span class="st">&quot;Bob&quot;</span></a>
+<a class="sourceLine" id="cb16-9" title="9">    <span class="er">...</span></a></code></pre></div>
+</section></section>
     </div>
   </div>
 
