@@ -1,6 +1,6 @@
 # Reveal Slides for Github Pages via Pandoc
 
-slides available at https://display-lab.github.io/slides-template
+slides available at https://display-lab.github.io/bitstomach-slides
 
 ## Making a new presentation
 Clone and rename this repository.
